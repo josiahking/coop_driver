@@ -1,0 +1,68 @@
+{
+  "expo": {
+    "name": "Drivers Coop",
+    "slug": "driver-coop",
+    "version": "0.0.2",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "drivers-coop",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/coop_splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#5d59ff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/app.png",
+        "backgroundColor": "#5d59ff"
+      },
+      "package": "com.driver.coop",
+      "versionCode": 1,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDi7iwkmCFBaHpGdRolIBqIO4QaVk1_sRo"
+        }
+      }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-asset",
+        {
+          "assets": [
+            "./assets/images/coop_splash.png",
+            "./assets/images/Illustration.svg",
+            "./assets/images/coop_logo_icon_primary.svg",
+            "./assets/images/coop_logo_icon_secondary.svg",
+            "./assets/images/coop.png"
+          ]
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "api": {
+        "base": "http://192.168.0.100:8888/",
+        "endpoint": {
+          "register": "api/driver/register",
+          "otp": {
+            "request": "api/otp/request",
+            "verify": "api/otp/verify"
+          }
+        }
+      }
+    }
+  }
+}
